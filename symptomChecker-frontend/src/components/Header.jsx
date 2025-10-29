@@ -10,7 +10,7 @@ export default function Header() {
           alt="Arogyandichi SmartCare"
           className="logo"
         />
-        <h1 className="app-name">Arogyandichi SmartCare</h1>
+        <h1 className="app-name">Symptom Checker SmartCare</h1>
       </div>
 
       <nav className="nav-links">
