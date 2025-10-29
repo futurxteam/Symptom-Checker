@@ -1,13 +1,13 @@
 // src/App.js
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Interview from "./pages/Interview";
+import Home from "./pages/Home";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Interview />} />
+        <Route path="/" element={<Home />} />
       </Routes>
     </Router>
   );
