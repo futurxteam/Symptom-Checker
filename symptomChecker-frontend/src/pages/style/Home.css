@@ -1,0 +1,149 @@
+/* ========== General Layout ========== */
+
+/* Wrapper for entire page */
+.home-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Header always on top */
+  .home-wrapper header {
+    flex-shrink: 0;
+    width: 100%;
+  }
+  
+  /* Main content stretches in middle */
+  .home-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #e6f7f6, #ffffff);
+    padding: 60px 20px;
+  }
+  
+  /* Footer always bottom */
+  .home-wrapper footer {
+    flex-shrink: 0;
+    width: 100%;
+    background-color: #f8fafc;
+    text-align: center;
+    padding: 20px 0;
+    color: #555;
+    border-top: 1px solid #e2e8f0;
+  }
+  
+.home-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #e6f7f6, #ffffff);
+    padding: 60px 20px;
+    font-family: "Inter", "Poppins", sans-serif;
+  }
+  
+  /* ========== Wrapper Grid ========== */
+  .home-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    max-width: 1100px;
+    width: 100%;
+    align-items: center;
+  }
+  
+  /* ========== Left Section ========== */
+  .home-left h1 {
+    font-size: 40px;
+    color: #1b1b1b;
+    font-weight: 600;
+    margin-bottom: 20px;
+    line-height: 1.3;
+  }
+  
+  .home-left p {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  
+  .home-left strong {
+    color: #0f766e;
+  }
+  
+  /* ========== Features List ========== */
+  .feature-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 35px;
+  }
+  
+  .feature-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+    font-size: 15px;
+    color: #333;
+  }
+  
+  .feature-list li i {
+    color: #0d9488;
+    font-size: 18px;
+    margin-right: 10px;
+  }
+  
+  /* ========== Store Buttons ========== */
+  .store-buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 8px;
+  }
+  
+  .store-buttons img {
+    height: 45px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .store-buttons img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* ========== Rating Text ========== */
+  .rating {
+    color: #666;
+    font-size: 14px;
+  }
+  
+  /* ========== Right Section (Phone Image) ========== */
+  .home-right {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .home-right img {
+    width: 300px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* ========== Responsive Design ========== */
+  @media (max-width: 900px) {
+    .home-content {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+  
+    .feature-list li {
+      justify-content: center;
+    }
+  
+    .home-right img {
+      width: 240px;
+      margin-top: 30px;
+    }
+  }
+  
