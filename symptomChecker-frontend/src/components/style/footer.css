@@ -1,29 +1,73 @@
 .footer {
-  width: 100%;
-  background-color: #f5f7fa;
-  color: #555;
-  padding: 15px 30px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  font-size: 0.9rem;
-  border-top: 1px solid #ddd;
-  position: fixed;
-  bottom: 0;
-  left: 0;
+  align-items: flex-start;
+  background-color: #fff;
+  padding: 40px 80px;
+  color: #1f2a44;
+  border-top: 1px solid #e0e0e0;
+  flex-wrap: wrap;
 }
 
-.footer a {
-  color: #007bff;
+.footer-column {
+  flex: 1;
+  min-width: 250px;
+  margin: 10px 20px;
+}
+
+.footer-column h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column li {
+  margin-bottom: 8px;
+}
+
+.footer-column a {
+  color: #1f2a44;
   text-decoration: none;
-  margin-left: 15px;
-  transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease;
 }
 
-.footer a:hover {
-  color: #0056b3;
+.footer-column a:hover {
+  color: #007bff;
 }
 
-.footer p {
-  margin: 0;
+.footer-column p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: #1f2a44;
+  font-size: 1.2rem;
+  transition: color 0.2s ease;
+}
+
+.social-icons a:hover {
+  color: #007bff;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-column {
+    margin: 20px 0;
+  }
 }
