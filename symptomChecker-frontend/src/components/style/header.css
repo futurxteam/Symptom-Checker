@@ -129,6 +129,14 @@
   display: flex;
 }
 
+.dropdown-text {
+  color: #ffffff ;  /* force white text even with dark bg */
+  font-size: 0.9rem;
+  padding: 10px 15px;
+  margin: 0;
+  line-height: 1.4;
+  background-color: transparent; /* no background overlay */
+}
 /* Dropdown items */
 .dropdown-content a {
   color: #ffffff;

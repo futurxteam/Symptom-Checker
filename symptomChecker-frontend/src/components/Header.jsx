@@ -14,7 +14,22 @@ export default function Header() {
 
       <nav className="nav-links">
         <a href="/about">About Us</a>
-        <a href="/business">Business</a>
+        <div className="dropdown">
+  <button className="dropbtn">Business ▼</button>
+  <div className="dropdown-content">
+    <p className="dropdown-text">
+      Learn more about our business collaborations and partnerships.
+    </p>
+    <a
+      href="https://futureaceacademy.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Visit FutureAce Academy →
+    </a>
+  </div>
+</div>
+
 
         {/* Apps Dropdown */}
         <div className="dropdown">
