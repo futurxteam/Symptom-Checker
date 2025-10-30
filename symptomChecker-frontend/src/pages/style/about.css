@@ -1,123 +1,271 @@
-.about-page {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background: #fdfbf7;
-  color: #333;
-}
-
-.about-main {
-  flex: 1;
-  text-align: center;
-  padding: 80px 20px;
-  background: linear-gradient(to bottom, #d3f2f0, white);
-}
-
-/* Carousel Section */
-.carousel-section {
-  padding: 60px 20px;
-}
-
-.carousel-title {
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: #222;
-  margin-bottom: 10px;
-}
-
-.carousel-subtitle {
-  font-size: 1.1rem;
-  color: #555;
-  max-width: 700px;
-  margin: 0 auto 40px;
-}
-
-.carousel-arrows {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-bottom: 20px;
-}
-
-.arrow-btn {
-  font-size: 22px;
-  background: transparent;
-  color: #444;
-  border: 1px solid #aaa;
-  border-radius: 6px;
-  padding: 6px 12px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.arrow-btn:hover {
-  background: #00a6a6;
-  color: #fff;
-  border-color: #00a6a6;
-}
-
-/* Carousel Cards */
-.carousel-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.carousel-card {
-  background: #fffaf4;
-  border: 1px solid #eee;
-  border-radius: 16px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  height: 420px;
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.carousel-card:hover {
-  transform: translateY(-5px);
-}
-
-.carousel-img {
-  width: 180px;
-  height: 180px;
-  object-fit: contain;
-  margin-bottom: 25px;
-}
-
-.carousel-text {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-.carousel-btn {
-  padding: 10px 20px;
-  background: #0077ff;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-.carousel-btn:hover {
-  background: #005fd1;
-}
-
-@media (max-width: 900px) {
-  .carousel-card {
-    height: auto;
-    padding: 20px;
+/* Root container styling */
+body {
+    font-family: "Inter", "Poppins", sans-serif;
   }
-
-  .carousel-img {
-    width: 120px;
-    height: 120px;
+  
+  /* Main background and layout */
+  main {
+    background: linear-gradient(to bottom, #d3f2f0, #ffffff);
+    text-align: center;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
-
-  .carousel-text {
-    font-size: 1rem;
+  
+  /* Headings */
+  main h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1f2937;
+    margin-bottom: 1rem;
   }
-}
+  
+  main p {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
+  }
+  
+  /* Arrow Buttons */
+  main button svg {
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+  
+  main button:hover svg {
+    color: #0077ff;
+    transform: scale(1.2);
+  }
+  
+  /* Slider container */
+  .slick-slider {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 3rem auto;
+    padding: 0 1rem;
+  }
+  
+  /* Each slide card */
+  .slick-slide > div > div {
+    background: #fffaf4;
+    border: 1px solid #f2eae0;
+    border-radius: 1.5rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    height: 460px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 1.5rem;
+  }
+  
+  .slick-slide > div > div:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Image in card */
+  .slick-slide img {
+    width: 220px;
+    height: 220px;
+    object-fit: contain;
+    margin: 0 auto 1rem auto;
+    transition: transform 0.3s ease;
+  }
+  
+  .slick-slide > div > div:hover img {
+    transform: scale(1.05);
+  }
+  
+  /* Step title */
+  .slick-slide p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #333;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+  
+  /* Button inside card */
+  .slick-slide button {
+    background-color: #0077ff !important;
+    color: #fff !important;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    padding: 0.6rem 1.4rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .slick-slide button:hover {
+    background-color: #005fcb !important;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #f3f3f3 !important;
+    color: #666 !important;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 1rem !important;
+    margin-top: auto;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    main h2 {
+      font-size: 2rem;
+    }
+  
+    .slick-slide > div > div {
+      height: auto;
+      padding: 1.5rem;
+    }
+  
+    .slick-slide img {
+      width: 180px;
+      height: 180px;
+    }
+    
+  }
+/* ============================= */
+/* Custom Next & Previous Buttons */
+/* ============================= */
+
+.arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    top: 0;
+    z-index: 10;
+    padding-bottom: 2rem;  /* ✅ adds visible space below arrows */
+  }
+  
+  /* Optional: ensure slider doesn’t overlap */
+  .slick-slider {
+    margin-top: 1rem;      /* ✅ adds a small gap below arrows */
+    padding-top: 1rem;
+  }
+  
+  
+  
+  
+  /* Base style for both buttons */
+  .arrow-btn {
+    font-size: 22px;
+    background: transparent;
+    color: #444;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .arrow-btn:hover {
+    background: #00a6a6;
+    color: #fff;
+    border-color: #00a6a6;
+  }
+  
+  /* Previous (left) button style */
+  .arrow button:first-child {
+    border-color: #ccc;
+  }
+  
+  .arrow button:first-child:hover {
+    background-color: #555;
+    border-color: #555;
+    box-shadow: 0 6px 20px rgba(85, 85, 85, 0.3);
+  }
+  
+  /* SVG icons */
+  .arrow button svg {
+    width: 22px;
+    height: 22px;
+    transition: transform 0.25s ease;
+  }
+  
+  /* Hover slide animation */
+  .arrow button:hover svg {
+    transform: translateX(3px);
+  }
+  
+  /* Reverse direction for prev button */
+  .arrow button:first-child:hover svg {
+    transform: translateX(-3px);
+  }
+  
+  /* Tooltip labels */
+  .arrow button::after {
+    position: absolute;
+    bottom: -24px;
+    font-size: 0.75rem;
+    color: #666;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .arrow button:first-child::after {
+    content: "Previous";
+  }
+  
+  .arrow button:last-child::after {
+    content: "Next";
+  }
+  
+  .arrow button:hover::after {
+    opacity: 1;
+  }
+  
+  /* Responsive tweaks */
+  @media (max-width: 768px) {
+    .arrow {
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+    }
+  
+    .arrow button {
+      width: 44px;
+      height: 44px;
+    }
+  
+    .arrow button::after {
+      display: none;
+    }
+  }
+/* 🔧 Fix hover bug where boxes merge or jump */
+.slick-slide {
+    padding: 0 10px; /* Add space between slides */
+    box-sizing: border-box;
+  }
+  
+  .slick-slide > div {
+    display: flex !important;
+    justify-content: center;
+  }
+  
+  .slick-slide > div > div {
+    background: #fffaf4;
+    border: 1px solid #f2eae0;
+    border-radius: 1.5rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+  }
+  
+  .slick-slide > div > div:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Prevent slides from resizing or shifting */
+  .slick-list {
+    margin: 0 -10px;
+    overflow: hidden;
+  }
+    
