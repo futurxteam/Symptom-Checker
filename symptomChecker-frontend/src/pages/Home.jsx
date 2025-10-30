@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "./style/Home.css";
 import { useLanguage } from "../context/LanguageContext"; // ✅ import context
+import { SymptomCarousel } from "./about";
 
 export default function Home() {
   const { language } = useLanguage(); // ✅ get current language from cookie/context
@@ -107,7 +108,10 @@ export default function Home() {
             />
           </div>
         </div>
-      </main>
+        <div className="symptom-carousel-section">
+    <SymptomCarousel />
+  </div>
+</main>
 
       <Footer />
     </div>
