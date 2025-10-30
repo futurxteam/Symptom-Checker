@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Header from "./components/Header"; 
 import { LanguageProvider } from "./context/LanguageContext"; // ✅ Import provider
+import AboutUs from "./pages/about";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Home />} />
           {/* You can add more pages here like: */}
           {/* <Route path="/about" element={<About />} /> */}
+          <Route path="/about" element={<AboutUs />} />
         </Routes>
       </Router>
     </LanguageProvider>
