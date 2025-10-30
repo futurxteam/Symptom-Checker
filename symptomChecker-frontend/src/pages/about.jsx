@@ -2,6 +2,12 @@ import React, { useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "./style/about.css";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+
+
+
 
 export default function AboutUs() {
   const sliderRef = useRef(null);
@@ -50,7 +56,7 @@ export default function AboutUs() {
 
   return (
     <div className="flex flex-col min-h-screen bg-[#fdfbf7] text-gray-800">
-      {/* Header */}
+       <Header />
       <main className="flex-1 flex flex-col items-center justify-center text-center py-16 px-6 bg-gradient-to-b from-[#d3f2f0] to-white">
         <h2 className="text-4xl font-extrabold mb-4 text-gray-800">
           How Symptom Works
@@ -61,7 +67,7 @@ export default function AboutUs() {
         </p>
 
         {/* Arrows */}
-        <div className="flex justify-center gap-6 mb-8">
+        <div className="arrow">
           <button
             onClick={() => sliderRef.current.slickPrev()}
             className="text-gray-700 hover:text-blue-600 transition"
@@ -130,10 +136,7 @@ export default function AboutUs() {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="w-full mt-auto bg-gray-100 text-center p-4 text-sm text-gray-600">
-        © 2025 Symptom. All rights reserved.
-      </footer>
+      <Footer />
     </div>
   );
 }
