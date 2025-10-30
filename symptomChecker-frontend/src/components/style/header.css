@@ -61,7 +61,7 @@
 
 .nav-links a:hover,
 .nav-links .dropbtn:hover {
-  color: #00b3b3;
+  color: #9ddfdf;
 }
 
 /* --- Buttons --- */
@@ -89,7 +89,7 @@
 }
 
 .login-btn:hover {
-  background-color: #ffffff;
+  background-color: #1b253d;
   color: #1f2a44;
 }
 
@@ -267,11 +267,14 @@
     padding-left: 14px;
      width: 60%;  
     text-align: center;
-
+    margin-left: 60px;
+    text-indent: -10px;
   }
   .btn.start-btn {
     width: 60%;  
     text-align: center;
     padding-left: 14px;
+    margin-left: 60px;
+    text-indent: -10px;
   }
 }

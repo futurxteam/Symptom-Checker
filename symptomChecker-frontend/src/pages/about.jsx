@@ -33,13 +33,23 @@ export function SymptomCarousel() {
         ];
 
   const settings = {
-    dots: false,
-    infinite: false,
-    slidesToShow: 2,
-    slidesToScroll: 2,
-    arrows: false,
-    responsive: [{ breakpoint: 1024, settings: { slidesToShow: 1, slidesToScroll: 1 } }],
-  };
+  dots: false,
+  infinite: false,
+  slidesToShow: 2,
+  slidesToScroll: 2,
+  arrows: false,
+  responsive: [
+    {
+      breakpoint: 900,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: false,
+        arrows: false,
+      },
+    },
+  ],
+};
 
   return (
     <div className="carousel-section">
