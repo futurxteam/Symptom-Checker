@@ -114,13 +114,27 @@
 .home-right {
   display: flex;
   justify-content: center;
+  align-items: center;
+  padding: 0; /* no outer padding */
+  margin: 0;
 }
 
 .home-right img {
-  width: 300px;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 300px;              /* keeps phone size consistent */
+  height: auto;
+  display: block;
+  padding: 0;                /* no padding inside */
+  margin: 0;                 /* no extra margin around */
+  border-radius: 30px;       /* soft rounded edge for mobile shape */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); /* realistic drop shadow */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
+
+.home-right img:hover {
+  transform: scale(1.015); /* light hover zoom */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
 
 /* ========== Carousel Section ========== */
 .symptom-carousel-section {

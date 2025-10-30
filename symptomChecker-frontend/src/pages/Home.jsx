@@ -103,7 +103,7 @@ export default function Home() {
           {/* Right Section */}
           <div className="home-right">
             <img
-              src="https://cdn.dribbble.com/userupload/12050347/file/original-2392b4cb9f054358fcb1d0c248d6cb9b.png?resize=800x600"
+              src="./public/mobile.png"
               alt="App Preview"
             />
           </div>
