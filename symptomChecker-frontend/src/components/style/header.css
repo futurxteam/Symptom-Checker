@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #1f2a44; /* dark navy */
+  background-color: #1f2a44;
   color: #ffffff;
   padding: 10px 40px;
   height: 65px;
@@ -11,33 +11,27 @@
   top: 0;
   z-index: 1000;
   width: 100%;
-  max-width: 100vw; /* ✅ prevents overflow */
-  overflow-x: visible;
   box-sizing: border-box;
 }
-.home-link {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;   /* ✅ removes underline */
-  color: #ffffff;           /* ✅ keeps white text */
-}
 
-.home-link:hover {
-  opacity: 0.9;             /* optional subtle hover */
-}
-
-/* Left side (logo + title) */
+/* --- Logo Section --- */
 .header-left {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
+.home-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
 .logo {
-  height: 60px;
-  width: 60px;
-  vertical-align: middle;
+  height: 55px;
+  width: 55px;
 }
 
 .app-name {
@@ -49,33 +43,34 @@
   white-space: nowrap;
 }
 
-/* Navigation section */
+/* --- Navigation --- */
 .nav-links {
   display: flex;
   align-items: center;
   gap: 25px;
-  flex-wrap: nowrap;
+  transition: all 0.3s ease;
 }
 
-.nav-links a {
+.nav-links a,
+.nav-links .dropbtn {
   color: #ffffff;
   text-decoration: none;
   font-size: 0.95rem;
   transition: color 0.2s ease;
-  white-space: nowrap;
 }
 
-.nav-links a:hover {
-  color: #00b3b3; /* teal hover */
+.nav-links a:hover,
+.nav-links .dropbtn:hover {
+  color: #00b3b3;
 }
 
-/* Buttons */
+/* --- Buttons --- */
 .btn {
   padding: 6px 14px;
   border-radius: 6px;
   font-weight: 500;
   transition: background 0.3s ease, color 0.3s ease;
-  white-space: nowrap;
+  box-sizing: border-box;
 }
 
 .start-btn {
@@ -98,13 +93,17 @@
   color: #1f2a44;
 }
 
-/* --- Dropdown (Apps & Language) --- */
-.dropdown {
-  position: relative;
-  display: inline-block;
+/* --- Action Buttons Container (Desktop) --- */
+.action-button-container {
+  display: flex;
+  gap: 15px;
 }
 
-/* Dropdown button */
+/* --- Dropdown --- */
+.dropdown {
+  position: relative;
+}
+
 .dropbtn {
   background: none;
   border: none;
@@ -112,43 +111,36 @@
   font-size: 0.95rem;
   cursor: pointer;
   font-family: inherit;
-  transition: color 0.2s ease;
-  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
-.dropbtn:hover {
-  color: #00b3b3; /* teal hover */
-}
-
-/* Dropdown menu (hidden by default) */
 .dropdown-content {
-  display: none; /* hidden until hover */
+  display: none;
   position: absolute;
-  top: 100%; /* directly below the button */
+  top: 100%;
   left: 0;
-  background-color: #2a3a5c; /* darker navy for dropdown */
+  background-color: #2a3a5c;
   border-radius: 6px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  min-width: 150px;
+  min-width: 160px;
   z-index: 999;
   flex-direction: column;
-  animation: fadeIn 0.15s ease-in-out;
 }
 
-/* ✅ Show dropdown when hovered */
+.dropdown-content .dropdown-text {
+  font-size: 0.85rem;
+  color: #f0f0f0;
+  padding: 10px 15px;
+  margin: 0;
+  line-height: 1.4;
+}
+
 .dropdown:hover .dropdown-content {
   display: flex;
 }
 
-.dropdown-text {
-  color: #ffffff ;  /* force white text even with dark bg */
-  font-size: 0.9rem;
-  padding: 10px 15px;
-  margin: 0;
-  line-height: 1.4;
-  background-color: transparent; /* no background overlay */
-}
-/* Dropdown items */
 .dropdown-content a {
   color: #ffffff;
   padding: 10px 15px;
@@ -160,58 +152,126 @@
 
 .dropdown-content a:hover {
   background-color: #00b3b3;
-  color: #ffffff;
 }
 
-/* Highlight for active language */
-.active-lang {
-  font-weight: 600;
+.dropdown-content a.active-lang {
+  font-weight: bold;
   color: #00b3b3;
 }
 
-/* Smooth fade animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* --- Hamburger Menu --- */
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
 }
 
-/* Responsive */
+.menu-icon div {
+  width: 25px;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 2px;
+}
+
+/* --- Mobile Styles --- */
 @media (max-width: 900px) {
-  .header {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: auto;
-    padding: 12px 20px;
+  .app-name {
+    display: none;
   }
 
-  .header-left {
-    justify-content: center;
-    margin-bottom: 10px;
+  .menu-icon {
+    display: flex;
   }
 
   .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background-color: #1f2a44;
+    padding: 20px 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    gap: 12px;
+    text-align: left;
   }
 
-  /* Mobile-friendly dropdown */
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    width: 100%;
+    font-size: 1rem;
+    padding: 8px 0;
+  }
+
+  /* Dropdown fixes for mobile */
+  .dropdown {
+    width: 100%;
+  }
+
+  .dropbtn {
+    width: 100%;
+    text-align: left;
+    font-size: 1rem;
+    padding: 8px 0;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: none;
+  }
+
   .dropdown-content {
     position: static;
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #2a3a5c;
+    border-radius: 4px;
+    padding: 8px 0;
+    margin-top: 5px;
     box-shadow: none;
-    background-color: #1f2a44;
-    border-radius: 0;
-    animation: none;
+  }
+
+  .dropdown.open .dropdown-content {
+    display: flex;
   }
 
   .dropdown-content a {
-    padding: 8px 10px;
+    padding: 8px 20px;
+    font-size: 0.95rem;
+  }
+
+  .dropdown-content .dropdown-text {
+    padding: 8px 20px;
+  }
+
+  /* --- Mobile Action Buttons --- */
+  .action-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  /* Buttons inside mobile menu */
+  
+
+  .btn.login-btn {
+    padding-left: 14px;
+     width: 60%;  
+    text-align: center;
+
+  }
+  .btn.start-btn {
+    width: 60%;  
+    text-align: center;
+    padding-left: 14px;
   }
 }

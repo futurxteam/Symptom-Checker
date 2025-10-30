@@ -65,9 +65,17 @@
   .footer {
     flex-direction: column;
     text-align: center;
+    padding: 30px 20px; /* Added padding adjustment for mobile */
   }
 
   .footer-column {
     margin: 20px 0;
+    width: 100%; /* Ensure columns take full width */
+  }
+
+  /* --- This is the new rule --- */
+  /* This centers the social media icons */
+  .social-icons {
+    justify-content: center;
   }
 }
