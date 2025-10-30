@@ -1,15 +1,17 @@
 import React from "react";
 import { useLanguage } from "../context/LanguageContext";
 import "./style/header.css";
-
+import { Link } from "react-router-dom";
 export default function Header() {
   const { language, toggleLanguage } = useLanguage();
 
   return (
     <header className="header">
       <div className="header-left">
-        <img src="/logo.png" alt="SmartCare" className="logo" />
-        <h1 className="app-name">Symptom Checker SmartCare</h1>
+        <Link to="/" className="home-link"> {/* ✅ Link to Home */}
+          <img src="/logo.png" alt="SmartCare" className="logo" />
+          <h1 className="app-name">Symptom Checker SmartCare</h1>
+        </Link>
       </div>
 
       <nav className="nav-links">
